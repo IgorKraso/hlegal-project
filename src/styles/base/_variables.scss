@@ -1,0 +1,35 @@
+// Colors
+$colorWhite: #fff;
+$mainColor: #323264;
+$main-altColor: #46466e;
+$main-softColor: #686887;
+$accentColor: #f0145a;
+$activeRegular: #24a3ff;
+$activeHover: #0085ff;
+$activeActive: #006ccf;
+$greyBg: #f5f5fa;
+$greyBgAlt: #ededf7;
+$greyText: #b3b3ba;
+$greySeparator: #e6e6f0;
+// Gradient
+$regularGradient: linear-gradient(#323264, 0% #323264, 73.96% #a54b5f, 100%);
+$softGradient: linear-gradient(#323264, 0% #323264, 50.63% #7a425e, 100%);
+$redGradient: liner-gradient(#f0145a, 0% #693264, 100%);
+$superSoftGradient: linear-gradient(#323264, 0% #323264, 59.9% #643e72, 100%);
+$superRedText: liner-gradient(#f0145a, 0% #ef8080, 100%);
+// loyout
+// screen
+$desktopHD: 1920px;
+$desktopSD: 1440px;
+$tabletHD: 1024px;
+$tabletSD: 768px;
+$mobile: 375px;
+// container
+$containerDesktopHD: 1620px;
+$containerDesktopSD: 1360px;
+$containerTabletHD: 944px;
+$containerTabletSD: 688px;
+$containerMobile: 375px;
+// Fonts
+$fontWeightBold: 700;
+$fontWeightRegular: 400;

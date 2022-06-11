@@ -1,0 +1,9 @@
+@use "../base/variables" as var;
+
+@mixin container($max-width, $padding) {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $padding;
+    padding-right: $padding;
+}
