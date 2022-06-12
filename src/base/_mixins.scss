@@ -3,21 +3,32 @@
 @mixin devices($breakpoint) {
     @if $breakpoint==desktopSD {
         @media only screen and(max-width:var.$desktopSD) {
+            max-width: var.$containerDesktopSD;
             @content;
         }
     }
     @if $breakpoint==tabletHD {
         @media only screen and(max-width:var.$tabletHD) {
+            max-width: var.$containerTabletHD;
             @content;
         }
     }
+    @if $breakpoint==tabletHD-SD {
+        @media only screen and(max-width:var.$tabletHD-SD) {
+            max-width: var.$containerTabletHD;
+            @content;
+        }
+    }
+
     @if $breakpoint==tabletSD {
         @media only screen and(max-width:var.$tabletSD) {
+            max-width: var.$containerTabletSD;
             @content;
         }
     }
     @if $breakpoint==mobile {
         @media only screen and(max-width:var.$mobile) {
+            max-width: var.$containerMobile;
             @content;
         }
     }
