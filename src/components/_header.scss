@@ -1,15 +1,22 @@
 @use "../base/variables" as var;
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
+
+
 .header {
     padding-top: 50px;
-    padding-bottom: 7px;
-    background-color: var.$mainColor;
+    padding-bottom: 30px;
+    &-dark {
+        background-color: var.$mainColor;
+    }
+    &-bright {
+        background-color: var.$mainColor;
+    }
 
     &__wrapper {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 200px 1fr;
         grid-template-rows: 1fr 1fr;
     }
     .logo-wrapper {
@@ -38,11 +45,18 @@
         font-size: 12px;
         line-height: 125%;
         font-weight: var.$fontWeightBold;
-        color: var.$colorWhite;
+        &_dark {
+            color: var.$colorWhite;
+        }
+        &_bright {
+            color: var.$colorWhite;
+        }
+
         &-active {
             padding: 5px 7px;
             background-color: var.$accentColor;
             border-radius: 8px;
+            color: var.$colorWhite;
         }
     }
     &__address {
@@ -74,6 +88,13 @@
             @include mix.dot(var.$colorWhite);
         }
     }
+    .facebook-icon {
+        fill: var.$colorWhite;
+        :hover {
+            fill: var.$accentColor;
+            transition: fill 0.3s ease-in;
+        }
+    }
     &__nav {
         grid-column: 2/3;
         grid-row: 2/3;
@@ -90,23 +111,28 @@
         font-size: 16px;
         line-height: 125%;
         font-weight: var.$fontWeightBold;
-        color: var.$colorWhite;
+        padding-bottom: 3px;
+        border-bottom: 2px solid transparent;
+        transition: border 0.3s ease;
+        &_dark {
+            color: var.$colorWhite;
+            &:hover {
+                border-bottom: 2px solid var.$colorWhite;
+            }
+        }
+        &_bright {
+            color: var.$activeRegular;
+            &:hover {
+                border-bottom: 2px solid var.$activeRegular;
+            }
+        }
+        &_current {
+            color: var.$colorWhite;
+            border-bottom: 2px solid var.$accentColor;
+        }
     }
 }
 
 .container {
-    @include cont.container(var.$containerDesktopHD, 20px);
-
-    @include mix.devices(desktopSD) {
-        max-width: var.$containerDesktopSD;
-    }
-    @include mix.devices(tabletHD) {
-        max-width: var.$containerTabletHD;
-    }
-    @include mix.devices(tabletSD) {
-        max-width: var.$containerTabletSD;
-    }
-    @include mix.devices(mobile) {
-        max-width: var.$containerMobile;
-    }
+    @include cont.container;
 }
