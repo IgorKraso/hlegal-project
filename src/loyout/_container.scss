@@ -11,14 +11,18 @@
     padding-right: var(--global-padding);
     @include mix.devices(desktopSD) {
         --global-padding: 60px;
+        max-width: var.$containerDesktopSD;
     }
     @include mix.devices(tabletHD) {
         --global-padding: 60px;
+        max-width: var.$containerTabletHD;
     }
     @include mix.devices(tabletSD) {
         --global-padding: 60px;
+        max-width: var.$containerTabletSD;
     }
     @include mix.devices(mobile) {
         --global-padding: 30px;
+        max-width: var.$containerMobile;
     }
 }

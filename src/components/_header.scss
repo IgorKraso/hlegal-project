@@ -2,10 +2,9 @@
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
 
-
 .header {
     padding-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
     &-dark {
         background-color: var.$mainColor;
     }
@@ -135,4 +134,84 @@
 
 .container {
     @include cont.container;
+}
+@include mix.devices(tabletHD-SD) {
+    .header {
+        &__wrapper {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            row-gap: 30px;
+        }
+        .logo-wrapper {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            align-self: center;
+            justify-items: center;
+        }
+        .logo__img {
+            max-width: 130px;
+        }
+        &__info {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 18px;
+        }
+        &__nav {
+            grid-column: 1/2;
+            grid-row: 3/4;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+        &__nav__list {
+            display: flex;
+            justify-content: end;
+            column-gap: 15px;
+        }
+    }
+}
+@include mix.devices(tablet-mobile){
+    .header {
+        &__wrapper {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            row-gap: 30px;
+        }
+        .logo-wrapper {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            align-self: center;
+            justify-items: center;
+        }
+        .logo__img {
+            max-width: 130px;
+        }
+        &__info {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 18px;
+        }
+        &__nav {
+            grid-column: 1/2;
+            grid-row: 3/4;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+        &__nav__list {
+            display: flex;
+            justify-content: end;
+            column-gap: 15px;
+        }
+    }
 }
