@@ -127,6 +127,26 @@ p {
 .header .logo__img {
   max-width: 130px;
 }
+.header__burger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.header__burger:hover {
+  background-color: #686887;
+}
+.header__burger__line {
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+}
 .header__info {
   grid-column: 2/3;
   grid-row: 1/2;
@@ -138,13 +158,12 @@ p {
 }
 .header__langs {
   display: flex;
-  -moz-column-gap: 14px;
-       column-gap: 14px;
   align-items: center;
 }
 .header__lang {
   font-size: 12px;
   line-height: 125%;
+  padding: 5px 7px;
   font-weight: 700;
 }
 .header__lang_dark {
@@ -231,7 +250,7 @@ p {
 }
 .header__nav__list {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   -moz-column-gap: 15px;
        column-gap: 15px;
 }
@@ -307,29 +326,58 @@ p {
     align-self: center;
     justify-items: center;
   }
-  .header .logo__img {
-    max-width: 130px;
-  }
   .header__info {
     grid-column: 1/2;
     grid-row: 1/2;
-    display: flex;
     justify-content: flex-start;
-    align-items: center;
-    -moz-column-gap: 18px;
-         column-gap: 18px;
   }
   .header__nav {
     grid-column: 1/2;
     grid-row: 3/4;
-    display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
   }
-  .header__nav__list {
+}
+@media only screen and (max-width: 590px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header {
+    padding-top: 0;
+  }
+  .header__wrapper {
+    grid-template-rows: 1fr 33px;
+    row-gap: 15px;
+  }
+  .header__info {
+    padding: 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(245, 245, 250, 0.2);
+  }
+  .header .logo-wrapper {
     display: flex;
-    justify-content: end;
-    -moz-column-gap: 15px;
-         column-gap: 15px;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .header .logo__img {
+    max-width: 70px;
+  }
+  .header__burger {
+    display: flex;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__address {
+    display: none;
+  }
+  .header__telnumber::before {
+    display: none;
+  }
+  .header .facebook-link {
+    display: none;
   }
 }/*# sourceMappingURL=home.css.map */
