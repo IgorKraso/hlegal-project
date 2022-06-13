@@ -1,5 +1,6 @@
 // Colors
 $colorWhite: #fff;
+$colorWhiteAlfa:#ffffff4d;
 $mainColor: #323264;
 $main-altColor: #46466e;
 $main-softColor: #686887;
@@ -13,11 +14,19 @@ $greyBgAlt: #ededf7;
 $greyText: #b3b3ba;
 $greySeparator: #e6e6f0;
 // Gradient
-$regularGradient: linear-gradient(#323264, 0% #323264, 73.96% #a54b5f, 100%);
-$softGradient: linear-gradient(#323264, 0% #323264, 50.63% #7a425e, 100%);
-$redGradient: liner-gradient(#f0145a, 0% #693264, 100%);
-$superSoftGradient: linear-gradient(#323264, 0% #323264, 59.9% #643e72, 100%);
-$superRedText: liner-gradient(#f0145a, 0% #ef8080, 100%);
+$regularGradient: linear-gradient(
+    to bottom right,
+    #323264 73.96%,
+    #a54b5f 100%
+);
+$softGradient: linear-gradient(to top right, #323264 50.63%, #7a425e 100%);
+$redGradient: linear-gradient(to bottom right, #f0145a 0%, #693264 100%);
+$superSoftGradient: linear-gradient(
+    to bottom left,
+    #323264 59.9%,
+    #643e72 100%
+);
+$superRedText: linear-gradient(to right, #f0145a 0%, #ef8080 100%);
 // loyout
 // screen
 $desktopHD: 1920px;
