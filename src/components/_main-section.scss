@@ -14,7 +14,7 @@
     }
     &__title {
         position: absolute;
-        top: 361px;
+        top: 40%;
         left: 50%;
         transform: translateX(-50%);
         font-size: 38px;
@@ -29,7 +29,38 @@
         max-width: 872px;
         margin-left: auto;
         margin-right: auto;
-        z-index: 1;
+    }
+    &__scroll {
+        position: absolute;
+        top: 92%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        border: 2px solid var.$colorWhite;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        z-index: 5;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-left: 2px solid var.$colorWhite;
+            border-bottom: 2px solid var.$colorWhite;
+            transform: translateX(-50%) translateY(-70%) rotate(315deg);
+            transition: border-color 0.3s ease;
+        }
+        &:hover {
+            border-color: var.$accentColor;
+            &::before {
+                border-color: var.$accentColor;
+            }
+        }
     }
 }
 .excellence {

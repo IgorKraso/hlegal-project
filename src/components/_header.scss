@@ -49,12 +49,14 @@
         }
     }
     &__info {
+        position: relative;
         grid-column: 2/3;
         grid-row: 1/2;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         column-gap: 18px;
+        z-index: 5;
     }
     &__langs {
         display: flex;
@@ -116,11 +118,13 @@
         }
     }
     &__nav {
+        position: relative;
         grid-column: 2/3;
         grid-row: 2/3;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+        z-index: 5;
     }
     &__nav__list {
         display: flex;
