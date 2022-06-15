@@ -1,3 +1,5 @@
-@use "../base/fonts";
-@use "../base/base-styles";
-@use "../components/header";
+@forward "../base/fonts";
+@forward "../base/base-styles";
+@forward "../components/header";
+@forward "../components/main-section";
+@forward "../components/services";

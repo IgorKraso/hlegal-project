@@ -99,6 +99,7 @@ h6 {
 }
 
 p {
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -148,6 +149,7 @@ p {
   background-color: #fff;
 }
 .header__info {
+  position: relative;
   grid-column: 2/3;
   grid-row: 1/2;
   display: flex;
@@ -155,6 +157,7 @@ p {
   align-items: center;
   -moz-column-gap: 18px;
        column-gap: 18px;
+  z-index: 5;
 }
 .header__langs {
   display: flex;
@@ -242,11 +245,13 @@ p {
   transition: fill 0.3s ease-in;
 }
 .header__nav {
+  position: relative;
   grid-column: 2/3;
   grid-row: 2/3;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  z-index: 5;
 }
 .header__nav__list {
   display: flex;
@@ -380,4 +385,176 @@ p {
   .header .facebook-link {
     display: none;
   }
+}
+.main-content {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background: linear-gradient(to bottom left, #323264 59.9%, #643e72 100%);
+}
+.main__wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 884px;
+}
+.main__title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 38px;
+  line-height: 121%;
+  color: #fff;
+  z-index: 10;
+}
+.main__background {
+  position: relative;
+  top: -115px;
+  display: block;
+  max-width: 872px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main__scroll {
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+.main__scroll::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translateX(-50%) translateY(-70%) rotate(315deg);
+  transition: border-color 0.3s ease;
+}
+.main__scroll:hover {
+  border-color: #f0145a;
+}
+.main__scroll:hover::before {
+  border-color: #f0145a;
+}
+
+.excellence {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.excellence__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 30px;
+  max-width: 580px;
+  padding-right: 60px;
+}
+.excellence__button {
+  font-size: 38px;
+  line-height: 121%;
+  color: #b3b3ba;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.excellence__button_active {
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(to right, #f0145a 0%, #ef8080 100%);
+}
+.excellence__button:hover {
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(to right, #f0145a 0%, #ef8080 100%);
+}
+.excellence__content {
+  padding-top: 43px;
+  padding-left: 60px;
+  border-left: 4px solid rgba(255, 255, 255, 0.3019607843);
+}
+.excellence__title {
+  font-size: 30px;
+  line-height: 120%;
+  color: #fff;
+}
+.excellence__text {
+  max-width: 861px;
+  margin-top: 30px;
+  font-size: 19px;
+  color: #fff;
+}
+
+.services__link {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #24a3ff;
+  transition: all 0.3s ease;
+}
+.services__link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 75px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #24a3ff;
+  border-bottom: 2px solid #24a3ff;
+  transform: translateY(-50%) rotate(225deg);
+  transition: all 0.3s ease;
+}
+.services__link:hover {
+  color: #f0145a;
+}
+.services__link:hover::after {
+  transform: translateY(-50%) rotate(225deg);
+  border-color: #f0145a;
+}
+.services__title {
+  margin-top: 10px;
+  font-size: 38px;
+  line-height: 120%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #f0145a 0%, #ef8080 100%);
+}
+.services__cards {
+  margin-top: 60px;
+  display: flex;
+}
+
+.card__icon__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 24px;
+  background-color: #fff;
+}
+.card__title {
+  font-size: 20px;
+  line-height: 130%;
+  color: #24a3ff;
 }/*# sourceMappingURL=home.css.map */

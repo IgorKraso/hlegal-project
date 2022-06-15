@@ -1,0 +1,64 @@
+@use "../base/variables" as var;
+@use "../loyout/container" as cont;
+@use "../base/mixins" as mix;
+
+.services {
+    &__link {
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 120%;
+        font-weight: var.$fontWeightBold;
+        text-transform: uppercase;
+        color: var.$activeRegular;
+        transition: all 0.3s ease;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 75px;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-left: 2px solid var.$activeRegular;
+            border-bottom: 2px solid var.$activeRegular;
+            transform: translateY(-50%) rotate(225deg);
+            transition: all 0.3s ease;
+        }
+        &:hover {
+            color: var.$accentColor;
+            &::after {
+                transform: translateY(-50%) rotate(225deg);
+                border-color: var.$accentColor;
+            }
+        }
+    }
+    &__title {
+        margin-top: 10px;
+        font-size: 38px;
+        line-height: 120%;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-image: var.$superRedText;
+    }
+    &__cards {
+        margin-top: 60px;
+        display: flex;
+    }
+}
+.card {
+    &__icon__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 92px;
+        height: 92px;
+        border-radius: 24px;
+        background-color: var.$colorWhite;
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 130%;
+        color: var.$activeRegular;
+    }
+}

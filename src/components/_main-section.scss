@@ -1,0 +1,113 @@
+@use "../base/variables" as var;
+@use "../loyout/container" as cont;
+@use "../base/mixins" as mix;
+.main-content {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    background: var.$superSoftGradient;
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        max-height: 884px;
+    }
+    &__title {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 38px;
+        line-height: 121%;
+        color: var.$colorWhite;
+        z-index: 10;
+    }
+    &__background {
+        position: relative;
+        top: -115px;
+        display: block;
+        max-width: 872px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__scroll {
+        position: absolute;
+        top: 92%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        border: 2px solid var.$colorWhite;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        z-index: 5;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-left: 2px solid var.$colorWhite;
+            border-bottom: 2px solid var.$colorWhite;
+            transform: translateX(-50%) translateY(-70%) rotate(315deg);
+            transition: border-color 0.3s ease;
+        }
+        &:hover {
+            border-color: var.$accentColor;
+            &::before {
+                border-color: var.$accentColor;
+            }
+        }
+    }
+}
+.excellence {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 30px;
+        max-width: 580px;
+        padding-right: 60px;
+    }
+    &__button {
+        font-size: 38px;
+        line-height: 121%;
+        color: var.$greyText;
+        background-color: transparent;
+        transition: all 0.3s ease;
+        &_active {
+            color: transparent;
+            background-clip: text;
+            background-image: var.$superRedText;
+        }
+        &:hover {
+            color: transparent;
+            background-clip: text;
+            background-image: var.$superRedText;
+        }
+    }
+    &__content {
+        padding-top: 43px;
+        padding-left: 60px;
+        border-left: 4px solid var.$colorWhiteAlfa;
+    }
+    &__title {
+        font-size: 30px;
+        line-height: 120%;
+        color: var.$colorWhite;
+    }
+    &__text {
+        max-width: 861px;
+        margin-top: 30px;
+        font-size: 19px;
+        color: var.$colorWhite;
+    }
+}
