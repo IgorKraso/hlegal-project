@@ -1,6 +1,6 @@
 // Colors
 $colorWhite: #fff;
-$colorWhiteAlfa:#ffffff4d;
+$colorWhiteAlfa: #ffffff4d;
 $mainColor: #323264;
 $main-altColor: #46466e;
 $main-softColor: #686887;
@@ -13,36 +13,42 @@ $greyBgAlfa: #f5f5fa33;
 $greyBgAlt: #ededf7;
 $greyText: #b3b3ba;
 $greySeparator: #e6e6f0;
+$greyBlur: #cacadb;
+$greyBright: #e7e7f2;
+
 // Gradient
 $regularGradient: linear-gradient(
-    to bottom right,
-    #323264 73.96%,
-    #a54b5f 100%
+  to bottom right,
+  #323264 73.96%,
+  #a54b5f 100%
 );
 $softGradient: linear-gradient(to top right, #323264 50.63%, #7a425e 100%);
 $redGradient: linear-gradient(to bottom right, #f0145a 0%, #693264 100%);
 $superSoftGradient: linear-gradient(
-    to bottom left,
-    #323264 59.9%,
-    #643e72 100%
+  to bottom left,
+  #323264 59.9%,
+  #643e72 100%
 );
 $superRedText: linear-gradient(to right, #f0145a 0%, #ef8080 100%);
+$superRedTextReversed: linear-gradient(90.13deg, #ef8080 0.84%, #f0145a 99.96%);
 // loyout
-// screen
+// screens
 $desktopHD: 1920px;
 $desktopSD: 1440px;
+$desktop-tablet: 1210px;
 $tabletHD: 1024px;
+$tabletSHD: 999px;
 $tabletHD-SD: 830px;
 $tabletSD: 768px;
-$tablet-mobile: 590px;
+$tablet-mobile: 610px;
 $mobile: 375px;
 // container
-$containerDesktopHD: 1620px;
+$containerDesktopHD: 1760px;
 $containerDesktopSD: 1360px;
 $containerTabletHD: 1024px;
 $containerTabletSD: 768px;
 $containerMobile: 375px;
 // Fonts
-$paragraphFontSize:16px;
+$paragraphFontSize: 16px;
 $fontWeightBold: 700;
 $fontWeightRegular: 400;

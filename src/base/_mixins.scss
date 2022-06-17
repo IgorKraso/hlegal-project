@@ -1,49 +1,59 @@
 @use "./variables" as var;
 // Media queries
 @mixin devices($breakpoint) {
-    @if $breakpoint==desktopSD {
-        @media only screen and(max-width:var.$desktopSD) {
-            @content;
-        }
+  @if $breakpoint==desktopSD {
+    @media only screen and(max-width:var.$desktopSD) {
+      @content;
     }
-    @if $breakpoint==tabletHD {
-        @media only screen and(max-width:var.$tabletHD) {
-            @content;
-        }
+  }
+  @if $breakpoint==desktop-tablet {
+    @media only screen and(max-width:var.$desktop-tablet) {
+      @content;
     }
-    @if $breakpoint==tabletHD-SD {
-        @media only screen and(max-width:var.$tabletHD-SD) {
-            @content;
-        }
+  }
+  @if $breakpoint==tabletHD {
+    @media only screen and(max-width:var.$tabletHD) {
+      @content;
     }
+  }
+  @if $breakpoint==tablet-SHD {
+    @media only screen and(max-width:var.$tabletSHD) {
+      @content;
+    }
+  }
+  @if $breakpoint==tabletHD-SD {
+    @media only screen and(max-width:var.$tabletHD-SD) {
+      @content;
+    }
+  }
 
-    @if $breakpoint==tabletSD {
-        @media only screen and(max-width:var.$tabletSD) {
-            @content;
-        }
+  @if $breakpoint==tabletSD {
+    @media only screen and(max-width:var.$tabletSD) {
+      @content;
     }
-    @if $breakpoint==tablet-mobile {
-        @media only screen and(max-width:var.$tablet-mobile) {
-            @content;
-        }
+  }
+  @if $breakpoint==tablet-mobile {
+    @media only screen and(max-width:var.$tablet-mobile) {
+      @content;
     }
+  }
 
-    @if $breakpoint==mobile {
-        @media only screen and(max-width:var.$mobile) {
-            @content;
-        }
+  @if $breakpoint==mobile {
+    @media only screen and(max-width:var.$mobile) {
+      @content;
     }
+  }
 }
 // Info blok dot
 @mixin dot($color) {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -12px;
-    transform: translateY(-50%);
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: $color;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $color;
 }
