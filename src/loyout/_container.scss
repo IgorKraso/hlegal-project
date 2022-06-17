@@ -2,27 +2,31 @@
 @use "../base/mixins" as mix;
 
 @mixin container {
-    --global-padding: 100px;
+  --global-padding: 100px;
 
-    max-width: var.$containerDesktopHD;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--global-padding);
-    padding-right: var(--global-padding);
-    @include mix.devices(desktopSD) {
-        --global-padding: 60px;
-        max-width: var.$containerDesktopSD;
-    }
-    @include mix.devices(tabletHD) {
-        --global-padding: 60px;
-        max-width: var.$containerTabletHD;
-    }
-    @include mix.devices(tabletSD) {
-        --global-padding: 60px;
-        max-width: var.$containerTabletSD;
-    }
-    @include mix.devices(mobile) {
-        --global-padding: 30px;
-        max-width: var.$containerMobile;
-    }
+  max-width: var.$containerDesktopHD;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--global-padding);
+  padding-right: var(--global-padding);
+  @include mix.devices(desktopSD) {
+    --global-padding: 60px;
+    max-width: var.$containerDesktopSD;
+  }
+  @include mix.devices(tabletHD) {
+    --global-padding: 60px;
+    max-width: var.$containerTabletHD;
+  }
+  @include mix.devices(tabletSD) {
+    --global-padding: 60px;
+    max-width: var.$containerTabletSD;
+  }
+  @include mix.devices(tablet-mobile) {
+    --global-padding: 30px;
+    max-width: var.$containerTabletSD;
+  }
+  @include mix.devices(mobile) {
+    --global-padding: 30px;
+    max-width: var.$containerMobile;
+  }
 }

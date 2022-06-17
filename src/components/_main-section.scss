@@ -2,112 +2,246 @@
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
 .main-content {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .main {
-    background: var.$superSoftGradient;
-    &__wrapper {
-        position: relative;
-        width: 100%;
-        max-height: 884px;
+  background: var.$superSoftGradient;
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 884px;
+  }
+  &__title {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    min-width: 560px;
+    transform: translateX(-50%);
+    font-size: 38px;
+    line-height: 121%;
+    text-align: center;
+    color: var.$colorWhite;
+    z-index: 10;
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border: 2px solid var.$colorWhite;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 5;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-left: 2px solid var.$colorWhite;
+      border-bottom: 2px solid var.$colorWhite;
+      transform: translateX(-50%) translateY(-70%) rotate(315deg);
+      transition: border-color 0.3s ease;
     }
-    &__title {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 38px;
-        line-height: 121%;
-        color: var.$colorWhite;
-        z-index: 10;
+    &:hover {
+      border-color: var.$accentColor;
+      &::before {
+        border-color: var.$accentColor;
+      }
     }
-    &__background {
-        position: relative;
-        top: -115px;
-        display: block;
-        max-width: 872px;
-        margin-left: auto;
-        margin-right: auto;
+  }
+  &__section {
+    position: relative;
+    padding-bottom: 60px;
+    border-radius: 0px 0px 12px 12px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      left: 20px;
+      transform: translateY(100%);
+      height: 10px;
+      border-radius: 0px 0px 12px 12px;
+      background-color: var.$greyBlur;
     }
-    &__scroll {
-        position: absolute;
-        top: 92%;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-        width: 42px;
-        height: 42px;
-        border: 2px solid var.$colorWhite;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        z-index: 5;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            border-left: 2px solid var.$colorWhite;
-            border-bottom: 2px solid var.$colorWhite;
-            transform: translateX(-50%) translateY(-70%) rotate(315deg);
-            transition: border-color 0.3s ease;
-        }
-        &:hover {
-            border-color: var.$accentColor;
-            &::before {
-                border-color: var.$accentColor;
-            }
-        }
+    &::before {
+      content: "";
+      position: absolute;
+      right: 40px;
+      bottom: 0;
+      left: 40px;
+      transform: translateY(200%);
+      height: 10px;
+      border-radius: 0px 0px 12px 12px;
+      background-color: var.$greyBright;
     }
+  }
 }
 .excellence {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  &__buttons {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    &__buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        row-gap: 30px;
-        max-width: 580px;
-        padding-right: 60px;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 30px;
+    max-width: 580px;
+    padding-right: 60px;
+  }
+  &__button {
+    font-size: 38px;
+    line-height: 121%;
+    color: var.$greyText;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    &_active {
+      color: transparent;
+      background-clip: text;
+      background-image: var.$superRedTextReversed;
     }
-    &__button {
-        font-size: 38px;
-        line-height: 121%;
-        color: var.$greyText;
-        background-color: transparent;
-        transition: all 0.3s ease;
-        &_active {
-            color: transparent;
-            background-clip: text;
-            background-image: var.$superRedText;
-        }
-        &:hover {
-            color: transparent;
-            background-clip: text;
-            background-image: var.$superRedText;
-        }
+    &:hover {
+      color: transparent;
+      background-clip: text;
+      background-image: var.$superRedTextReversed;
     }
-    &__content {
-        padding-top: 43px;
-        padding-left: 60px;
-        border-left: 4px solid var.$colorWhiteAlfa;
+  }
+  &__content {
+    padding-top: 43px;
+    padding-left: 60px;
+    border-left: 4px solid var.$colorWhiteAlfa;
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 120%;
+    color: var.$colorWhite;
+  }
+  &__text {
+    max-width: 861px;
+    margin-top: 30px;
+    font-size: 19px;
+    color: var.$colorWhite;
+  }
+}
+
+@include mix.devices(desktopSD) {
+  .main {
+    &__wrapper {
+      min-height: 684px;
     }
     &__title {
-        font-size: 30px;
-        line-height: 120%;
-        color: var.$colorWhite;
+      top: 38%;
+    }
+  }
+  .excellence {
+    &__text {
+      max-width: 581px;
+    }
+  }
+}
+@include mix.devices(desktop-tablet) {
+  .excellence {
+    &__text {
+      max-width: 405px;
+    }
+    &__title {
+      max-width: 405px;
+    }
+  }
+}
+@include mix.devices(tabletHD) {
+  .excellence {
+    &__text {
+      max-width: 380px;
+    }
+    &__title {
+      max-width: 380px;
+    }
+    &__content {
+      padding-top: 10px;
+    }
+  }
+}
+@include mix.devices(tablet-SHD) {
+  .excellence {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: unset;
+      column-gap: 15px;
+      max-width: 580px;
+      padding-right: 0;
+    }
+    &__button {
+      font-size: 38px;
+      line-height: 121%;
+      color: var.$greyText;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      &_active {
+        color: transparent;
+        background-clip: text;
+        background-image: var.$superRedTextReversed;
+      }
+      &:hover {
+        color: transparent;
+        background-clip: text;
+        background-image: var.$superRedTextReversed;
+      }
+    }
+    &__content {
+      padding-top: 60px;
+      padding-left: 0;
+      border-left: none;
+      border-top: 4px solid var.$colorWhiteAlfa;
+    }
+    &__title {
+      max-width: 100%;
     }
     &__text {
-        max-width: 861px;
-        margin-top: 30px;
-        font-size: 19px;
-        color: var.$colorWhite;
+      max-width: 100%;
+      margin-top: 30px;
+      font-size: 19px;
+      color: var.$colorWhite;
     }
+  }
+}
+@include mix.devices(tabletHD-SD) {
+  .main {
+    &__title {
+      max-width: 560px;
+    }
+    &__wrapper {
+      min-height: 764px;
+    }
+    &__title {
+      top: 32%;
+    }
+  }
+}
+@include mix.devices(tablet-mobile) {
+  .main {
+    &__title {
+      min-width: 315px;
+    }
+    &__wrapper {
+      min-height: 501px;
+    }
+    &__title {
+      top: 25%;
+    }
+  }
 }
