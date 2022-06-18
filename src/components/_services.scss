@@ -16,19 +16,18 @@
       content: "";
       position: absolute;
       top: 50%;
-      left: 75px;
       display: inline-block;
       width: 8px;
       height: 8px;
       border-left: 2px solid var.$activeRegular;
       border-bottom: 2px solid var.$activeRegular;
-      transform: translateY(-50%) rotate(225deg);
+      transform: translateY(-50%) translateX(50%) rotate(225deg);
       transition: all 0.3s ease;
     }
     &:hover {
       color: var.$accentColor;
       &::after {
-        transform: translateY(-50%) rotate(225deg);
+        transform: translateY(-50%) translateX(50%) rotate(225deg);
         border-color: var.$accentColor;
       }
     }

@@ -1,6 +1,12 @@
 @use "./variables" as var;
 // Media queries
 @mixin devices($breakpoint) {
+  @if $breakpoint==desktopHD-SD {
+    @media only screen and(max-width:var.$desktopHD-SD) {
+      @content;
+    }
+  }
+
   @if $breakpoint==desktopSD {
     @media only screen and(max-width:var.$desktopSD) {
       @content;
@@ -44,7 +50,7 @@
     }
   }
 }
-// Info blok dot
+// Info block dot
 @mixin dot($color) {
   content: "";
   position: absolute;
