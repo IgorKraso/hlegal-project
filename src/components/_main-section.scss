@@ -95,7 +95,8 @@
     flex-direction: column;
     align-items: flex-end;
     row-gap: 30px;
-    max-width: 580px;
+    width: 420px;
+    white-space: nowrap;
     padding-right: 60px;
   }
   &__button {
@@ -132,7 +133,13 @@
     color: var.$colorWhite;
   }
 }
-
+@include mix.devices(desktopHD-SD) {
+  .excellence {
+    &__text {
+      max-width: 730px;
+    }
+  }
+}
 @include mix.devices(desktopSD) {
   .main {
     &__wrapper {
@@ -173,35 +180,20 @@
 }
 @include mix.devices(tablet-SHD) {
   .excellence {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 
     &__buttons {
-      display: flex;
       flex-direction: row;
       align-items: unset;
       column-gap: 15px;
-      max-width: 580px;
       padding-right: 0;
+      padding-bottom: 60px;
+      width: 100%;
+      max-width: 1260px;
+      overflow-x: hidden;
     }
-    &__button {
-      font-size: 38px;
-      line-height: 121%;
-      color: var.$greyText;
-      background-color: transparent;
-      transition: all 0.3s ease;
-      &_active {
-        color: transparent;
-        background-clip: text;
-        background-image: var.$superRedTextReversed;
-      }
-      &:hover {
-        color: transparent;
-        background-clip: text;
-        background-image: var.$superRedTextReversed;
-      }
-    }
+
     &__content {
       padding-top: 60px;
       padding-left: 0;
@@ -242,6 +234,20 @@
     }
     &__title {
       top: 25%;
+    }
+  }
+  .excellence {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__buttons {
+      padding-bottom: 30px;
+    }
+    &__button {
+      font-size: 30px;
+      line-height: 121%;
+    }
+    &__content {
+      padding-top: 30px;
     }
   }
 }
