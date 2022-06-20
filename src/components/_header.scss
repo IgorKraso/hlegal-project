@@ -93,7 +93,7 @@
     font-weight: var.$fontWeightRegular;
     color: var.$colorWhite;
     &::before {
-      @include mix.dot(var.$colorWhite);
+      @include mix.dot(var.$colorWhite, -12px);
     }
   }
   &__telnumber {
@@ -104,23 +104,23 @@
     font-weight: var.$fontWeightBold;
     color: var.$colorWhite;
     &::before {
-      @include mix.dot(var.$colorWhite);
+      @include mix.dot(var.$colorWhite, -12px);
     }
   }
-  .facebook-link {
+  &__facebook-link {
     position: relative;
     display: inline-block;
+    color: var.$colorWhite;
+    transition: color 0.3s ease-in-out;
+
     &::before {
-      @include mix.dot(var.$colorWhite);
+      @include mix.dot(var.$colorWhite, -12px);
+    }
+    &:hover {
+      color: var.$accentColor;
     }
   }
-  .facebook-icon {
-    fill: var.$colorWhite;
-    :hover {
-      fill: var.$accentColor;
-      transition: fill 0.3s ease-in;
-    }
-  }
+
   &__nav {
     position: relative;
     grid-column: 2/3;
