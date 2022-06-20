@@ -1,0 +1,113 @@
+@use "../base/variables" as var;
+@use "../loyout/container" as cont;
+@use "../base/mixins" as mix;
+.publication {
+  &__section {
+    padding-top: 30px;
+    background-color: var.$greyBg;
+  }
+  &__link {
+    @include mix.blue-link;
+  }
+  &__title {
+    margin-top: 10px;
+    font-size: 38px;
+    line-height: 120%;
+    background-image: var.$superRedText;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  &__articles {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(270px, 1fr));
+    gap: 30px;
+    border-bottom: 2px solid var.$greySeparator;
+  }
+}
+.article {
+  background-color: var.$colorWhite;
+  border-radius: 12px;
+  overflow: hidden;
+  &__img-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+  &__img-wrapper_equity {
+    background: url(../../public/images/publication/publcation-1.jpg) center
+      center / cover no-repeat;
+  }
+  &__img-wrapper_penalty {
+    background: url(../../public/images/publication/publication-2.jpg) center
+      center / cover no-repeat;
+  }
+  &__img-wrapper_testament {
+    background: url(../../public/images/publication/publication-3.jpg) center
+      center / cover no-repeat;
+  }
+
+  &__wrapper {
+    border-bottom: 4px solid var.$greySeparator;
+  }
+  &__content {
+    padding: 30px;
+  }
+  &__title {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 125%;
+    color: var.$activeRegular;
+  }
+  &__issue-date {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: var.$fontWeightBold;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var.$greyText;
+  }
+  &__text-wrapper {
+    margin-top: 15px;
+  }
+  &__text {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 157%;
+    color: var.$ultimate;
+  }
+}
+
+@include mix.devices(tablet-SHD) {
+  .publication {
+    &__articles {
+      grid-template-columns: repeat(2, minmax(270px, 1fr));
+      grid-template-rows: repeat(2, 2fr);
+    }
+    &__article_thelast {
+      grid-column: 1/3;
+    }
+  }
+}
+@include mix.devices(tabletSSD) {
+  .publication {
+    &__articles {
+      grid-template-columns: 1fr;
+      grid-template-rows: unset;
+    }
+    &__article_thelast {
+      grid-column: unset;
+    }
+  }
+}
+@include mix.devices(tablet-mobile) {
+  .publication {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}

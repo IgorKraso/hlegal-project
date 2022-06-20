@@ -25,35 +25,7 @@
     background-color: var.$greyBg;
   }
   &__link {
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 120%;
-    font-weight: var.$fontWeightBold;
-    text-transform: uppercase;
-    color: var.$activeRegular;
-    transition: all 0.3s ease;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%) translateX(50%) rotate(225deg);
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-left: 2px solid var.$activeRegular;
-      border-bottom: 2px solid var.$activeRegular;
-      transition: all 0.3s ease;
-    }
-    &:hover {
-      color: var.$accentColor;
-      &::after {
-        transform: translateY(-50%) translateX(50%) rotate(225deg);
-        border-left: 2px solid var.$activeRegular;
-        border-bottom: 2px solid var.$activeRegular;
-        border-color: var.$accentColor;
-      }
-    }
+    @include mix.blue-link;
   }
 
   &__figure {

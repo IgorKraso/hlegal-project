@@ -38,6 +38,11 @@
       @content;
     }
   }
+  @if $breakpoint==tabletSSD {
+    @media only screen and(max-width:var.$tabletSSD) {
+      @content;
+    }
+  }
   @if $breakpoint==tablet-mobile {
     @media only screen and(max-width:var.$tablet-mobile) {
       @content;
@@ -51,15 +56,46 @@
   }
 }
 // Info block dot
-@mixin dot($color) {
+@mixin dot($color, $left) {
   content: "";
   position: absolute;
   top: 50%;
-  left: -12px;
+  left: $left;
   transform: translateY(-50%);
   display: block;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background-color: $color;
+}
+// links
+@mixin blue-link {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: var.$fontWeightBold;
+  text-transform: uppercase;
+  color: var.$activeRegular;
+  transition: all 0.3s ease;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(50%) rotate(225deg);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid var.$activeRegular;
+    border-bottom: 2px solid var.$activeRegular;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    color: var.$accentColor;
+    &::after {
+      transform: translateY(-50%) translateX(50%) rotate(225deg);
+      border-left: 2px solid var.$accentColor;
+      border-bottom: 2px solid var.$accentColor;
+    }
+  }
 }
