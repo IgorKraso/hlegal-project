@@ -27,6 +27,11 @@
       @content;
     }
   }
+  @if $breakpoint==tabletXS-HD {
+    @media only screen and(max-width:var.$tabletXS-HD) {
+      @content;
+    }
+  }
   @if $breakpoint==tabletHD-SD {
     @media only screen and(max-width:var.$tabletHD-SD) {
       @content;

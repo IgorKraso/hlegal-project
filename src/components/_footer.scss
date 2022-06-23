@@ -4,6 +4,7 @@
 .footer {
   padding-top: 30px;
   padding-bottom: 30px;
+  background-color: var.$greyBg;
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
