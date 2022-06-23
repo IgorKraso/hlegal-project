@@ -1,0 +1,211 @@
+@use "../base/variables" as var;
+@use "../loyout/container" as cont;
+@use "../base/mixins" as mix;
+/* Contact block*/
+.contact {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 650px));
+    gap: 60px;
+    justify-content: center;
+  }
+  &__wrapper {
+    max-width: 100%;
+  }
+  &__address-info {
+    max-width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 4px solid var.$greySeparator;
+  }
+  &__address {
+    font-size: 21px;
+    line-height: 142%;
+    color: var.$mainColor;
+  }
+  &__tel-email {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 4px solid var.$greySeparator;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  &__tel {
+    font-weight: var.$fontWeightRegular;
+    font-size: 21px;
+    line-height: 142%;
+    color: var.$main-altColor;
+  }
+  &__email {
+    font-weight: var.$fontWeightRegular;
+    font-size: 21px;
+    line-height: 142%;
+    color: var.$activeRegular;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: var.$accentColor;
+    }
+  }
+  &__social {
+    max-width: 155px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .social {
+    &__facebook-link {
+      color: var.$activeRegular;
+      transition: color 0.3s ease-in-out;
+    }
+    &__invite {
+      font-weight: var.$fontWeightBold;
+      font-size: 12px;
+      line-height: 133%;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var.$activeRegular;
+      transition: color 0.3s ease-in-out;
+    }
+    &:hover {
+      .social__facebook-link {
+        color: var.$accentColor;
+      }
+      .social__invite {
+        color: var.$accentColor;
+      }
+    }
+  }
+  &__form {
+    padding: 30px;
+    background-color: var.$greyBg;
+    border-radius: 12px;
+  }
+}
+/* Form*/
+.form {
+  &__title {
+    font-weight: var.$fontWeightBold;
+    font-size: 30px;
+    line-height: 123%;
+    background: var.$superRedText;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  &__label {
+    display: none;
+  }
+  &__username-wrapper {
+    margin-top: 30px;
+    width: 100%;
+  }
+  &__input {
+    width: 100%;
+    height: 56px;
+    padding: 15px;
+    border: 1px solid var.$colorWhite;
+    border-radius: 8px;
+    font-weight: var.$fontWeightRegular;
+    font-size: 16px;
+    line-height: 162%;
+    &:filled {
+      border: 1px solid var.$colorWhite;
+    }
+    &:focus {
+      border: 1px solid var.$activeRegular;
+    }
+    &:not(:placeholder-shown):invalid {
+      border: 1px solid var.$invalid;
+      color: var.$invalid;
+    }
+  }
+
+  &__message-wrapper {
+    margin-top: 15px;
+  }
+  &__message {
+    width: 100%;
+    height: 130px;
+    padding: 15px;
+    border: 1px solid var.$colorWhite;
+    border-radius: 8px;
+    font-weight: var.$fontWeightRegular;
+    font-size: 16px;
+    line-height: 162%;
+  }
+  &__subtitle {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 121%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var.$greyText;
+  }
+  &__phonenumber-wrapper {
+    margin-top: 15px;
+  }
+  &__email-wrapper {
+    margin-top: 15px;
+  }
+  &__btn-wrapper {
+    margin-top: 30px;
+  }
+  &__btn {
+    width: 100%;
+    padding: 18px 30px;
+    background-color: var.$activeRegular;
+    box-shadow: 0px 0px 20px var.$activeRegularAlfa;
+    border-radius: 12px;
+
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: var.$activeHover;
+    }
+    &:active {
+      background-color: var.$activeActive;
+    }
+    &_sent {
+      background-color: var.$greyBgAlt;
+    }
+  }
+}
+.btn {
+  &__base {
+    font-weight: var.$fontWeightBold;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: var.$colorWhite;
+  }
+  &__progress {
+    display: none;
+    animation: progress 3s infinite linear;
+  }
+  @keyframes progress {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  &__sent {
+    display: none;
+    font-weight: var.$fontWeightBold;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: var.$mainColor;
+  }
+}
+@include mix.devices(tablet-SHD) {
+  .contact {
+    &__info {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+  }
+}
