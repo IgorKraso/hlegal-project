@@ -7,25 +7,21 @@
     <title>Contact</title>
     <link rel="stylesheet" href="./styles/contact.css" />
   </head>
-  <body>
-    <header class="header header__bright">
+  <body class="contact-page">
+    <header class="contact-page__header header header-bright">
       <div class="container">
-        <div class="header__wrapper">
-          <div class="logo-wrapper">
-            <a href="#" class="logo__link">
-              <img
-                src="./images/contact/logo.svg"
-                alt="HLegal logo"
-                class="logo__img logo__img_contact"
-              />
-            </a>
-          </div>
-          <div class="header__burger-wrapper">
-            <div class="header__burger header__burger_bright burger">
-              <div class="burger__line burger__line_bright"></div>
-              <div class="burger__line burger__line_bright"></div>
-              <div class="burger__line burger__line_bright"></div>
-            </div>
+        <div class="header__wrapper header__wrapper-bright">
+          <a href="./index.html" class="logo__link">
+            <img
+              src="./images/contact/logo.svg"
+              alt="HLegal logo"
+              class="logo__img logo__img_contact"
+            />
+          </a>
+          <div class="header__burger header__burger_bright burger">
+            <div class="burger__line burger__line_bright"></div>
+            <div class="burger__line burger__line_bright"></div>
+            <div class="burger__line burger__line_bright"></div>
           </div>
 
           <div class="header__info header__info_bright">
@@ -38,9 +34,9 @@
                 >EN</a
               >
             </div>
-            <a href="/" class="header__address header__address_bright"
-              >Kyiv, Mechnikova str, 14/1</a
-            >
+            <address class="header__address header__address_bright">
+              Kyiv, Mechnikova str, 14/1
+            </address>
             <a
               href="tel:0800 211 927"
               class="header__telnumber header__telnumber_bright"
@@ -66,7 +62,9 @@
           <nav class="nav header__nav">
             <ul class="nav__list">
               <li class="list">
-                <a href="" class="nav__link nav__link_bright">about us</a>
+                <a href="./aboutus.html" class="nav__link nav__link_bright"
+                  >about us</a
+                >
               </li>
               <li class="list">
                 <a href="" class="nav__link nav__link_bright">services</a>
@@ -78,14 +76,14 @@
                 <a href="" class="nav__link nav__link_bright">publications</a>
               </li>
               <li class="list">
-                <a href="" class="nav__link nav__link_current">contact</a>
+                <a href="#" class="nav__link nav__link_current">contact</a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <main class="main">
+    <main class="contact-page__main">
       <div class="contact">
         <div class="container">
           <div class="contact__info">
@@ -152,7 +150,7 @@
                   placeholder="Message"
                 ></textarea>
               </div>
-              <h3 class="form__subtitle">How to answer you?</h3>
+              <h5 class="form__subtitle">How to answer you?</h5>
               <div class="form__phonenumber-wrapper">
                 <label class="form__label"> Phone number </label>
                 <input
@@ -199,7 +197,7 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
+    <footer class="contact-page__footer footer">
       <div class="container">
         <div class="footer__wrapper">
           <div class="footer__address address">

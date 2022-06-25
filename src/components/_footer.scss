@@ -15,6 +15,7 @@
     align-items: baseline;
     column-gap: 26px;
     &__text {
+      font-style: normal;
       font-weight: var.$fontWeightRegular;
       font-size: 16px;
       line-height: 125%;

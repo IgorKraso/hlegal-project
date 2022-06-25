@@ -2,21 +2,14 @@
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
 .publication {
-  &__section {
-    padding-top: 30px;
-    background-color: var.$greyBg;
-  }
+  padding-top: 30px;
+  background-color: var.$greyBg;
   &__link {
     @include mix.blue-link;
   }
   &__title {
     margin-top: 10px;
-    font-size: 38px;
-    line-height: 120%;
-    background-image: var.$superRedText;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @include mix.red-title;
   }
   &__articles {
     margin-top: 30px;
@@ -34,27 +27,21 @@
   &__img-wrapper {
     width: 100%;
     height: 200px;
+    overflow: hidden;
   }
-  &__img-wrapper_equity {
-    background: url(../../public/images/publication/publcation-1.jpg) center
-      center / cover no-repeat;
-  }
-  &__img-wrapper_penalty {
-    background: url(../../public/images/publication/publication-2.jpg) center
-      center / cover no-repeat;
-  }
-  &__img-wrapper_testament {
-    background: url(../../public/images/publication/publication-3.jpg) center
-      center / cover no-repeat;
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  &__wrapper {
+  &__separator {
     border-bottom: 4px solid var.$greySeparator;
   }
   &__content {
     padding: 30px;
   }
-  &__title {
+  &__title-link {
     max-width: 100%;
     font-size: 16px;
     line-height: 125%;
@@ -62,8 +49,8 @@
   }
   &__issue-date {
     display: inline-block;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: var.$fontWeightBold;
     font-size: 12px;
     line-height: 125%;
@@ -71,10 +58,9 @@
     text-transform: uppercase;
     color: var.$greyText;
   }
-  &__text-wrapper {
-    margin-top: 15px;
-  }
+
   &__text {
+    margin-top: 15px;
     max-width: 100%;
     font-size: 14px;
     line-height: 157%;

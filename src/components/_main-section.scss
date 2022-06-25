@@ -1,12 +1,56 @@
 @use "../base/variables" as var;
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
-.main-content {
+.home-page {
   margin: 0;
   padding: 0;
+  &__hero {
+    position: relative;
+    padding-bottom: 60px;
+    border-radius: 0px 0px 12px 12px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      left: 20px;
+      transform: translateY(100%);
+      height: 10px;
+      border-radius: 0px 0px 12px 12px;
+      background-color: var.$greyBlur;
+      z-index: 11;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: 40px;
+      bottom: 0;
+      left: 40px;
+      transform: translateY(200%);
+      height: 10px;
+      border-radius: 0px 0px 12px 12px;
+      background-color: var.$greyBright;
+      z-index: 11;
+    }
+  }
 }
 .main {
   background: var.$superSoftGradient;
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+  &__bg-img {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 872px;
+  }
   &__wrapper {
     position: relative;
     width: 100%;
@@ -57,33 +101,6 @@
       }
     }
   }
-  &__section {
-    position: relative;
-    padding-bottom: 60px;
-    border-radius: 0px 0px 12px 12px;
-    &::after {
-      content: "";
-      position: absolute;
-      right: 20px;
-      bottom: 0;
-      left: 20px;
-      transform: translateY(100%);
-      height: 10px;
-      border-radius: 0px 0px 12px 12px;
-      background-color: var.$greyBlur;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      right: 40px;
-      bottom: 0;
-      left: 40px;
-      transform: translateY(200%);
-      height: 10px;
-      border-radius: 0px 0px 12px 12px;
-      background-color: var.$greyBright;
-    }
-  }
 }
 .excellence {
   display: flex;
@@ -117,17 +134,19 @@
     }
   }
   &__content {
+    max-width: 861px;
     padding-top: 43px;
     padding-left: 60px;
     border-left: 4px solid var.$colorWhiteAlfa;
   }
   &__title {
+    width: 100%;
     font-size: 30px;
     line-height: 120%;
     color: var.$colorWhite;
   }
   &__text {
-    max-width: 861px;
+    width: 100%;
     margin-top: 30px;
     font-size: 19px;
     color: var.$colorWhite;
@@ -135,7 +154,7 @@
 }
 @include mix.devices(desktopHD-SD) {
   .excellence {
-    &__text {
+    &__content {
       max-width: 730px;
     }
   }
@@ -148,6 +167,9 @@
     &__title {
       top: 38%;
     }
+    &__bg-img {
+      max-width: 697px;
+    }
   }
   .excellence {
     &__text {
@@ -157,44 +179,43 @@
 }
 @include mix.devices(desktop-tablet) {
   .excellence {
-    &__text {
-      max-width: 405px;
-    }
-    &__title {
+    &__content {
       max-width: 405px;
     }
   }
 }
 @include mix.devices(tabletHD) {
   .excellence {
-    &__text {
-      max-width: 380px;
-    }
-    &__title {
-      max-width: 380px;
-    }
     &__content {
       padding-top: 10px;
+      max-width: 380px;
     }
   }
 }
-@include mix.devices(tablet-SHD) {
+@include mix.devices(tabletXS-HD) {
   .excellence {
     flex-wrap: wrap;
     justify-content: flex-start;
 
     &__buttons {
-      flex-direction: row;
+      flex-flow: row nowrap;
       align-items: unset;
       column-gap: 15px;
       padding-right: 0;
       padding-bottom: 60px;
       width: 100%;
-      max-width: 1260px;
-      overflow-x: hidden;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    &__button {
+      flex: 0 0 auto;
     }
 
     &__content {
+      max-width: 100%;
       padding-top: 60px;
       padding-left: 0;
       border-left: none;
@@ -213,6 +234,9 @@
 }
 @include mix.devices(tabletHD-SD) {
   .main {
+    &__bg-img {
+      max-width: 872px;
+    }
     &__title {
       max-width: 560px;
     }
@@ -226,7 +250,11 @@
 }
 @include mix.devices(tablet-mobile) {
   .main {
+    &__bg-img {
+      max-width: 523px;
+    }
     &__title {
+      white-space: wrap;
       min-width: 315px;
     }
     &__wrapper {
