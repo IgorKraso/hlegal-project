@@ -2,9 +2,8 @@
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
 .trust {
-  &__section {
-    padding-bottom: 60px;
-  }
+  padding-bottom: 60px;
+
   &__title {
     font-size: 14px;
     line-height: 121%;

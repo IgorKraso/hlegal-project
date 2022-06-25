@@ -104,3 +104,12 @@
     }
   }
 }
+// Title
+@mixin red-title {
+  font-size: 38px;
+  line-height: 120%;
+  background-image: var.$superRedText;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

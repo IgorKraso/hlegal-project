@@ -8,11 +8,7 @@
   }
   &__title {
     margin-top: 10px;
-    font-size: 38px;
-    line-height: 120%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-image: var.$superRedText;
+    @include mix.red-title;
   }
   &__cards {
     margin-top: 60px;
@@ -22,7 +18,7 @@
   }
 }
 .card {
-  &__wrapper {
+  &__icon-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;

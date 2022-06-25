@@ -7,25 +7,22 @@
     <title>HLegal</title>
     <link rel="stylesheet" href="./styles/home.css" />
   </head>
-  <body>
-    <header class="header header__dark">
+  <body class="home-page">
+    <header class="home-page__header header header-dark">
       <div class="container">
         <div class="header__wrapper">
-          <div class="logo-wrapper">
-            <a href="#" class="logo__link">
-              <img
-                src="./images/theme/logo.svg"
-                alt="HLegal logo"
-                class="logo__img"
-              />
-            </a>
-          </div>
-          <div class="header__burger-wrapper">
-            <div class="header__burger burger">
-              <div class="burger__line"></div>
-              <div class="burger__line"></div>
-              <div class="burger__line"></div>
-            </div>
+          <a href="#" class="logo__link">
+            <img
+              src="./images/theme/logo.svg"
+              alt="HLegal logo"
+              class="logo__img"
+            />
+          </a>
+
+          <div class="header__burger burger">
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
           </div>
 
           <div class="header__info">
@@ -38,7 +35,9 @@
                 >EN</a
               >
             </div>
-            <a href="/" class="header__address">Kyiv, Mechnikova str, 14/1</a>
+            <address class="header__address">
+              Kyiv, Mechnikova str, 14/1
+            </address>
             <a href="tel:0800 211 927" class="header__telnumber"
               >0800 211 927</a
             >
@@ -60,7 +59,9 @@
           <nav class="nav header__nav">
             <ul class="nav__list">
               <li class="list">
-                <a href="" class="nav__link nav__link_dark">about us</a>
+                <a href="./aboutus.html" class="nav__link nav__link_dark"
+                  >about us</a
+                >
               </li>
               <li class="list">
                 <a href="" class="nav__link nav__link_dark">services</a>
@@ -80,18 +81,20 @@
           </nav>
         </div>
       </div>
-      <img src="./images/big-h.png" alt="leter h" class="header__background" />
     </header>
-    <main class="main-content">
-      <section class="main main__section">
+    <main class="home-page__main">
+      <div class="main__bg home-page__bg">
+        <img src="./images/big-h.png" alt="bg" class="main__bg-img" />
+      </div>
+      <section class="main home-page__hero">
         <div class="container">
           <div class="main__wrapper">
             <h1 class="main__title">you legal solutions provider</h1>
             <a class="main__scroll"></a>
           </div>
 
-          <div class="excellence">
-            <div class="excellence__buttons horisontal__scroll">
+          <div class="home-page__excellence excellence">
+            <div class="excellence__buttons horisontal-scroll">
               <button
                 type="button"
                 class="excellence__button excellence__button_active"
@@ -120,12 +123,12 @@
               </p>
             </div>
           </div>
-          <div class="services">
+          <div class="home-page__services services">
             <a href="/" class="services__link">Services</a>
             <h2 class="services__title">What can we do better than others?</h2>
             <div class="services__cards">
               <div class="card">
-                <div class="card__wrapper">
+                <div class="card__icon-wrapper">
                   <img
                     src="../public/icons/services/ecommerce.png"
                     alt="ecommerce icon"
@@ -141,7 +144,7 @@
                 </p>
               </div>
               <div class="card">
-                <div class="card__wrapper">
+                <div class="card__icon-wrapper">
                   <img
                     src="../public/icons/services/support.png"
                     alt="support icon"
@@ -157,7 +160,7 @@
                 </p>
               </div>
               <div class="card">
-                <div class="card__wrapper">
+                <div class="card__icon-wrapper">
                   <img
                     src="../public/icons/services/coprorate.png"
                     alt="corporate icon"
@@ -172,7 +175,7 @@
                 </p>
               </div>
               <div class="card">
-                <div class="card__wrapper">
+                <div class="card__icon-wrapper">
                   <img
                     src="../public/icons/services/trust.png"
                     alt="trust icon"
@@ -188,7 +191,7 @@
                 </p>
               </div>
               <div class="card">
-                <div class="card__wrapper">
+                <div class="card__icon-wrapper">
                   <img
                     src="../public/icons/services/protection.png"
                     alt="protection icon"
@@ -206,7 +209,7 @@
                 </p>
               </div>
               <div class="card">
-                <div class="card__wrapper">
+                <div class="card__icon-wrapper">
                   <img
                     src="../public/icons/services/court.png"
                     alt="court icon"
@@ -224,12 +227,18 @@
           </div>
         </div>
       </section>
-      <div class="team team__block">
+      <div class="team home-page__team">
         <div class="container">
           <div class="team__content">
-            <div class="team__img-wrapper"></div>
+            <div class="team__img-wrapper">
+              <img
+                src="./images/team/team-block/author.jpg"
+                alt="Author picture"
+                class="team__author-pic"
+              />
+            </div>
             <div class="team__info">
-              <a href="/" class="team__link">команда</a>
+              <a href="/" lang="ua" class="team__link">команда</a>
               <figure class="team__figure">
                 <blockquote cite="/">
                   <p class="team__quote quote" lang="ua">
@@ -246,20 +255,20 @@
                 </figcaption>
               </figure>
             </div>
-            <div class="team__tab tab">
-              <div class="tab__buttons">
-                <button
-                  type="button"
-                  class="tab__button tab__button_active"
-                ></button>
-                <button type="button" class="tab__button"></button>
-                <button type="button" class="tab__button"></button>
-              </div>
+          </div>
+          <div class="team__tab tab">
+            <div class="tab__buttons">
+              <button
+                type="button"
+                class="tab__button tab__button_active"
+              ></button>
+              <button type="button" class="tab__button"></button>
+              <button type="button" class="tab__button"></button>
             </div>
           </div>
         </div>
       </div>
-      <section class="trust trust__section">
+      <section class="home-page__trust trust">
         <div class="container">
           <h4 class="trust__title">They already trust us</h4>
           <div class="trust__companies">
@@ -362,84 +371,97 @@
           </div>
         </div>
       </section>
-      <section class="publication publication__section">
+      <section class="home-page__publication publication">
         <div class="container">
           <a href="/" class="publication__link">Publications</a>
           <h2 class="publication__title">We have something to tell</h2>
           <div class="publication__articles articles">
             <article class="publication__article article">
-              <div
-                class="article__img-wrapper article__img-wrapper_equity"
-              ></div>
+              <div class="article__img-wrapper article__img-wrapper_equity">
+                <img
+                  src="./images/publication/publcation-1.jpg"
+                  alt="Equity"
+                  class="article__img"
+                />
+              </div>
               <div class="article__content">
-                <div class="article__wrapper">
-                  <h4 class="article__title">
-                    <a href="#" class="title__link">Equity associate</a>
-                  </h4>
-                  <span class="article__issue-date">April 22</span>
-                </div>
-                <div class="article__text-wrapper">
-                  <p class="article__text">
-                    I'm a jun on projects. I am a co-owner of a law firm. How it
-                    happened. Before entering my parents told me that if I…
-                  </p>
-                </div>
+                <h4 class="article__title">
+                  <a href="#" class="article__title-link">Equity associate</a>
+                </h4>
+                <time datetime="2021-04-22" class="article__issue-date"
+                  >April 22</time
+                >
+                <hr class="article__separator" />
+
+                <p class="article__text">
+                  I'm a jun on projects. I am a co-owner of a law firm. How it
+                  happened. Before entering my parents told me that if I…
+                </p>
               </div>
             </article>
             <article class="publication__article article">
-              <div
-                class="article__img-wrapper article__img-wrapper_penalty"
-              ></div>
+              <div class="article__img-wrapper article__img-wrapper_penalty">
+                <img
+                  src="./images/publication/publication-2.jpg"
+                  alt="Penalty"
+                  class="article__img"
+                />
+              </div>
               <div class="article__content">
-                <div class="article__wrapper">
-                  <h4 class="article__title">
-                    <a href="#" class="title__link"
-                      >Penalty for the Good Corporation: what will happen to
-                      Google and others for violating the GDPR</a
-                    >
-                  </h4>
-                  <span class="article__issue-date">September 29</span>
-                </div>
-                <div class="article__text-wrapper">
-                  <p class="article__text">
-                    And why the recovery of 50 million euros could be a fateful
-                    precedent According to Mind.ua January 21 National
-                    Commission for Data Protection.
-                  </p>
-                </div>
+                <h4 class="article__title title">
+                  <a href="#" class="article__title-link"
+                    >Penalty for the Good Corporation: what will happen to
+                    Google and others for violating the GDPR</a
+                  >
+                </h4>
+                <time datetime="2021-09-29" class="article__issue-date"
+                  >September 29</time
+                >
+                <hr class="article__separator" />
+
+                <p class="article__text">
+                  And why the recovery of 50 million euros could be a fateful
+                  precedent According to Mind.ua January 21 National Commission
+                  for Data Protection.
+                </p>
               </div>
             </article>
             <article
               class="publication__article article publication__article_thelast"
             >
-              <div
-                class="article__img-wrapper article__img-wrapper_testament"
-              ></div>
+              <div class="article__img-wrapper article__img-wrapper_testament">
+                <img
+                  src="./images/publication/publication-3.jpg"
+                  alt="Testament"
+                  class="article__img"
+                />
+              </div>
               <div class="article__content">
-                <div class="article__wrapper">
-                  <h4 class="article__title">
-                    <a href="#" class="title__link">Millennial Testament</a>
-                  </h4>
-                  <span class="article__issue-date">August 19</span>
-                </div>
-                <div class="article__text-wrapper">
-                  <p class="article__text">
-                    What and how modern vloggers, opinion leaders and
-                    crypto-millionaires will inherit A typical legacy of the
-                    Ukrainian generation X looks like this: an apartment in…
-                  </p>
-                </div>
+                <h4 class="article__title">
+                  <a href="#" class="article__title-link"
+                    >Millennial Testament</a
+                  >
+                </h4>
+                <time datetime="2021-08-19" class="article__issue-date"
+                  >August 19</time
+                >
+                <hr class="article__separator" />
+                <p class="article__text">
+                  What and how modern vloggers, opinion leaders and
+                  crypto-millionaires will inherit A typical legacy of the
+                  Ukrainian generation X looks like this: an apartment in…
+                </p>
               </div>
             </article>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="home-page__footer footer">
       <div class="container">
         <div class="footer__wrapper">
           <div class="footer__address address">
-            <p class="address__text">Kyiv, Mechnikova str, 14/1</p>
+            <address class="address__text">Kyiv, Mechnikova str, 14/1</address>
             <a href="/" class="address__link">On map</a>
           </div>
           <div class="footer__copy">
