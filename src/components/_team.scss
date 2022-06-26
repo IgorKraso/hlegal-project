@@ -1,6 +1,8 @@
 @use "../base/variables" as var;
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
+
+/* Team block*/
 .home-page__team {
   padding-top: 80px;
   padding-bottom: 60px;
@@ -58,7 +60,68 @@
     justify-content: center;
     padding-top: 30px;
   }
+  /* Team section*/
+  &__hero {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var.$colorWhite;
+  }
+  &__title {
+    @include mix.red-title;
+  }
+  &__cards {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(261px, 493px));
+    grid-template-rows: repeat(2, 462px);
+    gap: 60px;
+  }
 }
+.card {
+  &__mate-img {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  &__caption {
+    margin-top: 15px;
+  }
+
+  &__mate-details {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    &:hover {
+      .card__teammate-name {
+        color: var.$accentColor;
+      }
+      .card__more-btn {
+        stroke: var.$accentColor;
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__position {
+    font-weight: var.$fontWeightRegular;
+    font-size: 14px;
+    line-height: 157%;
+    color: var.$greyText;
+  }
+  &__teammate-name {
+    font-weight: var.$fontWeightBold;
+    font-size: 16px;
+    line-height: 125%;
+    color: var.$mainColor;
+  }
+}
+
 .tab {
   &__buttons {
     display: flex;
@@ -83,11 +146,19 @@
     }
   }
 }
+@include mix.devices(tabletHD) {
+  .team {
+    &__cards {
+      grid-template-columns: repeat(2, minmax(261px, 493px));
+      grid-template-rows: repeat(3, 462px);
+    }
+  }
+}
 @include mix.devices(tabletXS-HD) {
   .team {
     &__content {
       grid-template-columns: 1fr;
-      // grid-template-rows: 500px;
+      grid-template-rows: 500px;
     }
     &__img-wrapper {
       max-width: 100%;
@@ -98,6 +169,33 @@
     }
     &__info {
       grid-row: 2/3;
+    }
+  }
+}
+@include mix.devices(tabletSSD) {
+  .team {
+    &__hero {
+      padding-top: 30px;
+    }
+    &__title {
+      font-size: 30px;
+    }
+    &__cards {
+      grid-template-columns: minmax(261px, 493px);
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+}
+@include mix.devices(mobileHD) {
+  .card {
+    &__mate-img {
+      height: 315px;
+    }
+  }
+  .team {
+    &__cards {
+      grid-template-rows: repeat(6, 362px);
     }
   }
 }

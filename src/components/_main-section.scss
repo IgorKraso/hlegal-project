@@ -18,7 +18,7 @@
       height: 10px;
       border-radius: 0px 0px 12px 12px;
       background-color: var.$greyBlur;
-      z-index: 11;
+      z-index: 1;
     }
     &::before {
       content: "";
@@ -30,7 +30,7 @@
       height: 10px;
       border-radius: 0px 0px 12px 12px;
       background-color: var.$greyBright;
-      z-index: 11;
+      z-index: 1;
     }
   }
 }
@@ -152,13 +152,7 @@
     color: var.$colorWhite;
   }
 }
-@include mix.devices(desktopHD-SD) {
-  .excellence {
-    &__content {
-      max-width: 730px;
-    }
-  }
-}
+
 @include mix.devices(desktopSD) {
   .main {
     &__wrapper {
@@ -171,27 +165,8 @@
       max-width: 697px;
     }
   }
-  .excellence {
-    &__text {
-      max-width: 581px;
-    }
-  }
 }
-@include mix.devices(desktop-tablet) {
-  .excellence {
-    &__content {
-      max-width: 405px;
-    }
-  }
-}
-@include mix.devices(tabletHD) {
-  .excellence {
-    &__content {
-      padding-top: 10px;
-      max-width: 380px;
-    }
-  }
-}
+
 @include mix.devices(tabletXS-HD) {
   .excellence {
     flex-wrap: wrap;
@@ -276,6 +251,9 @@
     }
     &__content {
       padding-top: 30px;
+    }
+    &__title {
+      font-size: 20px;
     }
   }
 }

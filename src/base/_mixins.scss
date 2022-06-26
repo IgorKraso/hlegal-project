@@ -53,6 +53,11 @@
       @content;
     }
   }
+  @if $breakpoint==mobileHD {
+    @media only screen and(max-width:var.$mobileHD) {
+      @content;
+    }
+  }
 
   @if $breakpoint==mobile {
     @media only screen and(max-width:var.$mobile) {
