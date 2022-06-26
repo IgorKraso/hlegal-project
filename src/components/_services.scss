@@ -1,7 +1,38 @@
 @use "../base/variables" as var;
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
-
+/*Services*/
+.services-hero {
+  position: relative;
+  background: var.$superSoftGradient;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-radius: 0px 0px 12px 12px;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+    transform: translateY(100%);
+    height: 10px;
+    border-radius: 0px 0px 12px 12px;
+    background-color: var.$greyBlur;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    left: 40px;
+    transform: translateY(200%);
+    height: 10px;
+    border-radius: 0px 0px 12px 12px;
+    background-color: var.$greyBright;
+    z-index: 1;
+  }
+}
 .services {
   &__link {
     @include mix.blue-link;
@@ -33,6 +64,15 @@
     line-height: 130%;
     color: var.$activeRegular;
   }
+  &__link {
+    font-size: 20px;
+    line-height: 130%;
+    color: var.$activeRegular;
+    transition: color 0.3s ease;
+    &:hover {
+      color: var.$accentColor;
+    }
+  }
   &__text {
     margin-top: 15px;
     max-width: 492px;
@@ -49,5 +89,18 @@
 @include mix.devices(tablet-mobile) {
   .services__cards {
     grid-template-columns: minmax(197px, 493px);
+  }
+  .services {
+    &__title {
+      font-size: 30px;
+    }
+    &__cards {
+      margin-top: 30px;
+      gap: 30px;
+    }
+  }
+  .services-hero {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }

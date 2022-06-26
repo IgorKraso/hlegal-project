@@ -1,9 +1,11 @@
 @use "../base/variables" as var;
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
+/*They already trust us*/
+.services__trust {
+  padding-top: 80px;
+}
 .trust {
-  padding-bottom: 60px;
-
   &__title {
     font-size: 14px;
     line-height: 121%;
@@ -92,6 +94,26 @@
   .trust {
     &__companies {
       grid-template-columns: 1fr;
+    }
+    &__company {
+      &_clickky {
+        display: none;
+      }
+      &_eco {
+        display: none;
+      }
+      &_ingratek {
+        display: none;
+      }
+      &_city {
+        display: none;
+      }
+      &_artprint {
+        display: none;
+      }
+      &_ultimate {
+        display: none;
+      }
     }
   }
 }
