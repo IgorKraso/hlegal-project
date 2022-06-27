@@ -175,7 +175,6 @@ p {
 }
 .header .logo__img {
   max-width: 100%;
-  max-width: 254px;
 }
 .header .logo__img_contact {
   max-width: 297px;
@@ -185,6 +184,12 @@ p {
 }
 .header .logo__img_services {
   max-width: 302px;
+}
+.header .logo__img_team {
+  max-width: 254px;
+}
+.header .logo__img_publications {
+  max-width: 382px;
 }
 .header__burger {
   display: none;
@@ -377,6 +382,36 @@ p {
   border-bottom: 2px solid #f0145a;
 }
 
+@media only screen and (max-width: 1023px) {
+  .publications__header .big-logo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr -webkit-max-content 1fr;
+    grid-template-rows: 1fr max-content 1fr;
+    row-gap: 30px;
+  }
+  .publications__header .logo__link {
+    grid-row: 2/3;
+  }
+  .publications__header .logo__img {
+    position: relative;
+    z-index: 5;
+  }
+  .publications__header .logo__img_contact {
+    max-width: 297px;
+  }
+  .publications__header .header__info {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    justify-content: flex-start;
+  }
+  .publications__header .nav {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    justify-content: flex-start;
+  }
+}
 @media only screen and (max-width: 940px) {
   .header-long .big-logo {
     width: 100%;
@@ -467,7 +502,6 @@ p {
   .header .logo__img {
     position: relative;
     max-width: 70px;
-    max-width: 142px;
   }
   .header .logo__img_contact {
     max-width: 166px;
@@ -477,6 +511,12 @@ p {
   }
   .header .logo__img_services {
     max-width: 169px;
+  }
+  .header .logo__img_team {
+    max-width: 142px;
+  }
+  .header .logo__img_publications {
+    max-width: 212px;
   }
   .header__burger {
     margin-right: 15px;
@@ -687,6 +727,10 @@ p {
   background-color: #24a3ff;
   box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5019607843);
   border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
   transition: background-color 0.3s ease-in-out;
 }
 .form__btn:hover {
@@ -699,13 +743,6 @@ p {
   background-color: #ededf7;
 }
 
-.btn__base {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 125%;
-  text-align: center;
-  color: #fff;
-}
 .btn__progress {
   display: none;
   -webkit-animation: progress 3s infinite linear;

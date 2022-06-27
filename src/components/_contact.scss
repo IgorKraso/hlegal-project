@@ -156,31 +156,13 @@
   }
   &__btn {
     width: 100%;
-    padding: 18px 30px;
-    background-color: var.$activeRegular;
-    box-shadow: 0px 0px 20px var.$activeRegularAlfa;
-    border-radius: 12px;
-
-    transition: background-color 0.3s ease-in-out;
-    &:hover {
-      background-color: var.$activeHover;
-    }
-    &:active {
-      background-color: var.$activeActive;
-    }
+    @include mix.blue-btn;
     &_sent {
       background-color: var.$greyBgAlt;
     }
   }
 }
 .btn {
-  &__base {
-    font-weight: var.$fontWeightBold;
-    font-size: 16px;
-    line-height: 125%;
-    text-align: center;
-    color: var.$colorWhite;
-  }
   &__progress {
     display: none;
     animation: progress 3s infinite linear;

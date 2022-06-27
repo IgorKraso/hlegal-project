@@ -175,7 +175,6 @@ p {
 }
 .header .logo__img {
   max-width: 100%;
-  max-width: 254px;
 }
 .header .logo__img_contact {
   max-width: 297px;
@@ -185,6 +184,12 @@ p {
 }
 .header .logo__img_services {
   max-width: 302px;
+}
+.header .logo__img_team {
+  max-width: 254px;
+}
+.header .logo__img_publications {
+  max-width: 382px;
 }
 .header__burger {
   display: none;
@@ -377,6 +382,36 @@ p {
   border-bottom: 2px solid #f0145a;
 }
 
+@media only screen and (max-width: 1023px) {
+  .publications__header .big-logo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr -webkit-max-content 1fr;
+    grid-template-rows: 1fr max-content 1fr;
+    row-gap: 30px;
+  }
+  .publications__header .logo__link {
+    grid-row: 2/3;
+  }
+  .publications__header .logo__img {
+    position: relative;
+    z-index: 5;
+  }
+  .publications__header .logo__img_contact {
+    max-width: 297px;
+  }
+  .publications__header .header__info {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    justify-content: flex-start;
+  }
+  .publications__header .nav {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    justify-content: flex-start;
+  }
+}
 @media only screen and (max-width: 940px) {
   .header-long .big-logo {
     width: 100%;
@@ -467,7 +502,6 @@ p {
   .header .logo__img {
     position: relative;
     max-width: 70px;
-    max-width: 142px;
   }
   .header .logo__img_contact {
     max-width: 166px;
@@ -477,6 +511,12 @@ p {
   }
   .header .logo__img_services {
     max-width: 169px;
+  }
+  .header .logo__img_team {
+    max-width: 142px;
+  }
+  .header .logo__img_publications {
+    max-width: 212px;
   }
   .header__burger {
     margin-right: 15px;
@@ -1244,6 +1284,7 @@ p {
     display: none;
   }
 }
+/* Publications block*/
 .publication {
   padding-top: 30px;
   background-color: #f5f5fa;
@@ -1343,6 +1384,85 @@ p {
   color: #000000;
 }
 
+/* Publications main*/
+.publications__tab {
+  margin: 0 auto;
+  padding: 2px;
+  max-width: 233px;
+  border-radius: 12px;
+  background-color: #e6e6f0;
+  display: flex;
+  -moz-column-gap: 2px;
+       column-gap: 2px;
+}
+.publications__main {
+  margin-top: 60px;
+  padding-top: 30px;
+  background-color: #f5f5fa;
+}
+.publications__articles {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(270px, 1fr));
+  gap: 30px;
+}
+.publications__link {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 18px 30px;
+  background-color: #24a3ff;
+  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5019607843);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+.publications__link:hover {
+  background-color: #0085ff;
+}
+.publications__link:active {
+  background-color: #006ccf;
+}
+.publications__link-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.publications__bottom-line {
+  margin-top: 60px;
+  border-bottom: 2px solid #e6e6f0;
+}
+.publications .tab__button {
+  padding: 8px 30px 10px 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: #323264;
+  transition: background-color 0.3s ease;
+}
+.publications .tab__button:hover {
+  background-color: #f5f5fa;
+}
+.publications .tab__button_active {
+  background-color: #fff;
+}
+.publications .tab__button_active:hover {
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 999px) {
+  .publications__articles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(270px, 1fr));
+    gap: 30px;
+  }
+}
 @media only screen and (max-width: 999px) {
   .publication__articles {
     grid-template-columns: repeat(2, minmax(270px, 1fr));
@@ -1360,10 +1480,22 @@ p {
   .publication__article_thelast {
     grid-column: unset;
   }
+
+  .publications__articles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: minmax(270px, 1fr);
+    gap: 30px;
+    justify-content: center;
+  }
 }
 @media only screen and (max-width: 610px) {
   .publication__title {
     font-size: 30px;
+  }
+
+  .publications__main {
+    margin-top: 0;
   }
 }
 .footer {
