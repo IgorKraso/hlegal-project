@@ -105,8 +105,8 @@
 .excellence {
   display: flex;
   justify-content: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px;
+
   &__buttons {
     display: flex;
     flex-direction: column;
@@ -171,16 +171,19 @@
   .excellence {
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding-right: 0;
 
     &__buttons {
-      flex-flow: row nowrap;
+      position: relative;
+      right: 0;
+      flex-flow: row;
       align-items: unset;
       column-gap: 15px;
       padding-right: 0;
       padding-bottom: 60px;
       width: 100%;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -192,6 +195,7 @@
     &__content {
       max-width: 100%;
       padding-top: 60px;
+      margin-right: 60px;
       padding-left: 0;
       border-left: none;
       border-top: 4px solid var.$colorWhiteAlfa;
@@ -242,6 +246,7 @@
   .excellence {
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: 30px;
     &__buttons {
       padding-bottom: 30px;
     }
@@ -251,6 +256,7 @@
     }
     &__content {
       padding-top: 30px;
+      margin-right: 30px;
     }
     &__title {
       font-size: 20px;

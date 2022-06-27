@@ -678,6 +678,10 @@ p {
   gap: 60px;
 }
 
+.slider__item {
+  display: none;
+}
+
 .card__mate-img {
   width: 100%;
   height: 400px;
