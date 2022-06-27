@@ -669,8 +669,7 @@ p {
 .excellence {
   display: flex;
   justify-content: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px;
 }
 .excellence__buttons {
   display: flex;
@@ -734,17 +733,21 @@ p {
   .excellence {
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding-right: 0;
   }
   .excellence__buttons {
-    flex-flow: row nowrap;
+    position: relative;
+    right: 0;
+    flex-flow: row;
     align-items: unset;
     -moz-column-gap: 15px;
          column-gap: 15px;
     padding-right: 0;
     padding-bottom: 60px;
     width: 100%;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
   }
   .excellence__buttons::-webkit-scrollbar {
     display: none;
@@ -755,6 +758,7 @@ p {
   .excellence__content {
     max-width: 100%;
     padding-top: 60px;
+    margin-right: 60px;
     padding-left: 0;
     border-left: none;
     border-top: 4px solid rgba(255, 255, 255, 0.3019607843);
@@ -801,6 +805,7 @@ p {
   .excellence {
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: 30px;
   }
   .excellence__buttons {
     padding-bottom: 30px;
@@ -811,6 +816,7 @@ p {
   }
   .excellence__content {
     padding-top: 30px;
+    margin-right: 30px;
   }
   .excellence__title {
     font-size: 20px;
@@ -1062,6 +1068,10 @@ p {
   grid-template-columns: repeat(3, minmax(261px, 493px));
   grid-template-rows: repeat(2, 462px);
   gap: 60px;
+}
+
+.slider__item {
+  display: none;
 }
 
 .card__mate-img {
