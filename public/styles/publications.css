@@ -564,40 +564,12 @@ p {
     padding-right: 0;
   }
 }
-/*Services*/
-.services-hero {
-  position: relative;
-  background: linear-gradient(to bottom left, #323264 59.9%, #643e72 100%);
-  padding-top: 60px;
-  padding-bottom: 60px;
-  border-radius: 0px 0px 12px 12px;
+/* Publications block*/
+.publication {
+  padding-top: 30px;
+  background-color: #f5f5fa;
 }
-.services-hero::after {
-  content: "";
-  position: absolute;
-  right: 20px;
-  bottom: 0;
-  left: 20px;
-  transform: translateY(100%);
-  height: 10px;
-  border-radius: 0px 0px 12px 12px;
-  background-color: #cacadb;
-  z-index: 1;
-}
-.services-hero::before {
-  content: "";
-  position: absolute;
-  right: 40px;
-  bottom: 0;
-  left: 40px;
-  transform: translateY(200%);
-  height: 10px;
-  border-radius: 0px 0px 12px 12px;
-  background-color: #e7e7f2;
-  z-index: 1;
-}
-
-.services__link {
+.publication__link {
   position: relative;
   display: inline-block;
   font-size: 14px;
@@ -607,7 +579,7 @@ p {
   color: #24a3ff;
   transition: all 0.3s ease;
 }
-.services__link::after {
+.publication__link::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -619,15 +591,15 @@ p {
   border-bottom: 2px solid #24a3ff;
   transition: all 0.3s ease;
 }
-.services__link:hover {
+.publication__link:hover {
   color: #f0145a;
 }
-.services__link:hover::after {
+.publication__link:hover::after {
   transform: translateY(-50%) translateX(50%) rotate(225deg);
   border-left: 2px solid #f0145a;
   border-bottom: 2px solid #f0145a;
 }
-.services__title {
+.publication__title {
   margin-top: 10px;
   font-size: 38px;
   line-height: 120%;
@@ -636,172 +608,174 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.services__cards {
-  margin-top: 60px;
+.publication__articles {
+  margin-top: 30px;
+  padding-bottom: 30px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(197px, 493px));
-  gap: 60px;
+  grid-template-columns: repeat(3, minmax(270px, 1fr));
+  gap: 30px;
+  border-bottom: 2px solid #e6e6f0;
 }
 
-.card__icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 92px;
-  height: 92px;
-  border-radius: 24px;
+.article {
   background-color: #fff;
-}
-.card__title {
-  margin-top: 30px;
-  font-size: 20px;
-  line-height: 130%;
-  color: #24a3ff;
-}
-.card__link {
-  font-size: 20px;
-  line-height: 130%;
-  color: #24a3ff;
-  transition: color 0.3s ease;
-}
-.card__link:hover {
-  color: #f0145a;
-}
-.card__text {
-  margin-top: 15px;
-  max-width: 492px;
-  font-size: 16px;
-  line-height: 26px;
-  color: #fff;
-}
-
-@media only screen and (max-width: 999px) {
-  .services__cards {
-    grid-template-columns: repeat(2, minmax(197px, 493px));
-  }
-}
-@media only screen and (max-width: 610px) {
-  .services__cards {
-    grid-template-columns: minmax(197px, 493px);
-  }
-
-  .services__title {
-    font-size: 30px;
-  }
-  .services__cards {
-    margin-top: 30px;
-    gap: 30px;
-  }
-
-  .services-hero {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
-/*They already trust us*/
-.services__trust {
-  padding-top: 80px;
-}
-
-.trust__title {
-  font-size: 14px;
-  line-height: 121%;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #323264;
-}
-.trust__companies {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 120px);
-  grid-auto-rows: 120px;
   border-radius: 12px;
   overflow: hidden;
 }
-.trust__company {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.article__img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
-.trust__company_hillel {
-  background-color: #1c4280;
+.article__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.trust__company_wannabiz {
-  background-color: #143646;
+.article__separator {
+  border-bottom: 4px solid #e6e6f0;
 }
-.trust__company_tapgerine {
-  background-color: #f48b30;
+.article__content {
+  padding: 30px;
 }
-.trust__company_3dlook {
-  background-color: #9e4dc3;
+.article__title-link {
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 125%;
+  color: #24a3ff;
 }
-.trust__company_orangear {
-  background-color: #fd9339;
+.article__issue-date {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 125%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #b3b3ba;
 }
-.trust__company_adtelligent {
-  background-color: #e2e2e4;
-}
-.trust__company_clickky {
-  background-color: #c71c36;
-}
-.trust__company_eco {
-  background-color: #dcf3f9;
-}
-.trust__company_ingratek {
-  background-color: #eaeaea;
-}
-.trust__company_city {
-  background-color: #282240;
-}
-.trust__company_artprint {
-  background-color: #1d4568;
-}
-.trust__company_ultimate {
-  background-color: #000000;
+.article__text {
+  margin-top: 15px;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 157%;
+  color: #000000;
 }
 
-@media only screen and (max-width: 1440px) {
-  .trust .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .trust__companies {
-    border-radius: unset;
+/* Publications main*/
+.publications__tab {
+  margin: 0 auto;
+  padding: 2px;
+  max-width: 233px;
+  border-radius: 12px;
+  background-color: #e6e6f0;
+  display: flex;
+  -moz-column-gap: 2px;
+       column-gap: 2px;
+}
+.publications__main {
+  margin-top: 60px;
+  padding-top: 30px;
+  background-color: #f5f5fa;
+}
+.publications__articles {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(270px, 1fr));
+  gap: 30px;
+}
+.publications__link {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 18px 30px;
+  background-color: #24a3ff;
+  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5019607843);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+.publications__link:hover {
+  background-color: #0085ff;
+}
+.publications__link:active {
+  background-color: #006ccf;
+}
+.publications__link-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.publications__bottom-line {
+  margin-top: 60px;
+  border-bottom: 2px solid #e6e6f0;
+}
+.publications .tab__button {
+  padding: 8px 30px 10px 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: #323264;
+  transition: background-color 0.3s ease;
+}
+.publications .tab__button:hover {
+  background-color: #f5f5fa;
+}
+.publications .tab__button_active {
+  background-color: #fff;
+}
+.publications .tab__button_active:hover {
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 999px) {
+  .publications__articles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(270px, 1fr));
+    gap: 30px;
   }
 }
 @media only screen and (max-width: 999px) {
-  .trust__companies {
-    grid-template-columns: repeat(3, 1fr);
+  .publication__articles {
+    grid-template-columns: repeat(2, minmax(270px, 1fr));
+    grid-template-rows: repeat(2, 2fr);
+  }
+  .publication__article_thelast {
+    grid-column: 1/3;
   }
 }
 @media only screen and (max-width: 705px) {
-  .trust__companies {
-    grid-template-columns: repeat(2, 1fr);
+  .publication__articles {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+  }
+  .publication__article_thelast {
+    grid-column: unset;
+  }
+
+  .publications__articles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: minmax(270px, 1fr);
+    gap: 30px;
+    justify-content: center;
   }
 }
 @media only screen and (max-width: 610px) {
-  .trust__companies {
-    grid-template-columns: 1fr;
+  .publication__title {
+    font-size: 30px;
   }
-  .trust__company_clickky {
-    display: none;
-  }
-  .trust__company_eco {
-    display: none;
-  }
-  .trust__company_ingratek {
-    display: none;
-  }
-  .trust__company_city {
-    display: none;
-  }
-  .trust__company_artprint {
-    display: none;
-  }
-  .trust__company_ultimate {
-    display: none;
+
+  .publications__main {
+    margin-top: 0;
   }
 }
 .footer {
@@ -944,4 +918,4 @@ p {
     align-items: center;
     row-gap: 10px;
   }
-}/*# sourceMappingURL=services.css.map */
+}/*# sourceMappingURL=publications.css.map */

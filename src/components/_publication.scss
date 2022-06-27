@@ -1,6 +1,7 @@
 @use "../base/variables" as var;
 @use "../loyout/container" as cont;
 @use "../base/mixins" as mix;
+/* Publications block*/
 .publication {
   padding-top: 30px;
   background-color: var.$greyBg;
@@ -67,7 +68,77 @@
     color: var.$ultimate;
   }
 }
+/* Publications main*/
+.publications {
+  &__tab {
+    margin: 0 auto;
+    padding: 2px;
+    max-width: 233px;
+    border-radius: 12px;
+    background-color: var.$greySeparator;
+    display: flex;
+    column-gap: 2px;
+  }
 
+  &__main {
+    margin-top: 60px;
+    padding-top: 30px;
+    background-color: var.$greyBg;
+  }
+  &__articles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(270px, 1fr));
+    gap: 30px;
+  }
+  &__link {
+    display: inline-block;
+    margin: 0 auto;
+    @include mix.blue-btn;
+  }
+  &__link-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  &__bottom-line {
+    margin-top: 60px;
+    border-bottom: 2px solid var.$greySeparator;
+  }
+  .tab {
+    &__button {
+      padding: 8px 30px 10px 30px;
+      border-radius: 10px;
+      background-color: transparent;
+      font-weight: var.$fontWeightBold;
+      font-size: 16px;
+      line-height: 125%;
+      text-align: center;
+      color: var.$mainColor;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: var.$greyBg;
+      }
+      &_active {
+        background-color: var.$colorWhite;
+        &:hover {
+          background-color: var.$colorWhite;
+        }
+      }
+    }
+  }
+}
+
+@include mix.devices(tablet-SHD) {
+  .publications {
+    &__articles {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(270px, 1fr));
+      gap: 30px;
+    }
+  }
+}
 @include mix.devices(tablet-SHD) {
   .publication {
     &__articles {
@@ -89,11 +160,25 @@
       grid-column: unset;
     }
   }
+  .publications {
+    &__articles {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: minmax(270px, 1fr);
+      gap: 30px;
+      justify-content: center;
+    }
+  }
 }
 @include mix.devices(tablet-mobile) {
   .publication {
     &__title {
       font-size: 30px;
+    }
+  }
+  .publications {
+    &__main {
+      margin-top: 0;
     }
   }
 }
