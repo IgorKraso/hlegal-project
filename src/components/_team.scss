@@ -41,15 +41,21 @@
     font-weight: var.$fontWeightBold;
     @include mix.red-title;
   }
-  &__author {
+  &__figcaption {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+  &__author {
+    display: block;
+
     font-weight: var.$fontWeightBold;
     font-size: 16px;
     line-height: 20px;
     color: var.$greyText;
   }
   &__position {
-    margin-top: 6px;
     font-weight: var.$fontWeightRegular;
     font-size: 14px;
     line-height: 157%;

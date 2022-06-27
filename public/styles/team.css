@@ -637,15 +637,20 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.team__author {
+.team__figcaption {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+.team__author {
+  display: block;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #b3b3ba;
 }
 .team__position {
-  margin-top: 6px;
   font-weight: 400;
   font-size: 14px;
   line-height: 157%;
