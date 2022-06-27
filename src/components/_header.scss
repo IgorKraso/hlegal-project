@@ -70,17 +70,26 @@
   &__langs {
     display: flex;
     align-items: center;
+    column-gap: 1px;
   }
   &__lang {
     font-size: 12px;
     line-height: 125%;
     padding: 5px 7px;
     font-weight: var.$fontWeightBold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
     &_dark {
       color: var.$colorWhite;
+      &:hover {
+        background-color: var.$colorWhiteAlfaB;
+      }
     }
     &_bright {
       color: var.$greyText;
+      &:hover {
+        background-color: var.$greyBg;
+      }
     }
 
     &_active {
@@ -88,6 +97,9 @@
       background-color: var.$accentColor;
       border-radius: 8px;
       color: var.$colorWhite;
+      &:hover {
+        background-color: var.$accentColor;
+      }
     }
   }
   &__address {

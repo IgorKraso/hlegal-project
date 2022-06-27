@@ -216,24 +216,37 @@ p {
 .header__langs {
   display: flex;
   align-items: center;
+  -moz-column-gap: 1px;
+       column-gap: 1px;
 }
 .header__lang {
   font-size: 12px;
   line-height: 125%;
   padding: 5px 7px;
   font-weight: 700;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 .header__lang_dark {
   color: #fff;
 }
+.header__lang_dark:hover {
+  background-color: rgba(255, 255, 255, 0.2039215686);
+}
 .header__lang_bright {
   color: #b3b3ba;
+}
+.header__lang_bright:hover {
+  background-color: #f5f5fa;
 }
 .header__lang_active {
   padding: 5px 7px;
   background-color: #f0145a;
   border-radius: 8px;
   color: #fff;
+}
+.header__lang_active:hover {
+  background-color: #f0145a;
 }
 .header__address {
   position: relative;
